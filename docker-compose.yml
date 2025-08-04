@@ -5,9 +5,8 @@ services:
     image: job-app-image        
     ports:
       - "3000:3000"
-    environment:
-      MONGODB_URL: mongodb://mongo:27017/jobs-api
-      JWT_SECRET: 943f2601c579e118e1fa1299ed3623221e869c3d6df6e5511e9775079f1b5336
+    env_file:
+      - .env
     depends_on:
       - mongo
 
